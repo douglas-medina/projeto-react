@@ -7,11 +7,18 @@ import ReposList from "./components/ReposList"
 function App() {
     // expressões: mount, updated e unmounted
     const [formularioVisivel, setFormularioVisivel] = useState(true)
+    const [nomeUsuario, setNomeUsuario] = useState('')
 
     return (
         <>
-            <Perfil nome="Douglas Medina" endereco="https://github.com/douglas-medina.png" />
-            <ReposList />
+            <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
+
+            {nomeUsuario.length > 4 && (
+                <>
+                    <Perfil nomeUsuario={nomeUsuario} />
+                    <ReposList nomeUsuario={nomeUsuario} />
+                </>
+            )}
 
             {/* {formularioVisivel && (
                 <Formulario />

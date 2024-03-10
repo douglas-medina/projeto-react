@@ -11,7 +11,7 @@ function App() {
 
     return (
         <>
-            <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
+            <input type="text" placeholder="Digite o usuário Github" onBlur={(e) => setNomeUsuario(e.target.value)} />
 
             {nomeUsuario.length > 4 && (
                 <>
